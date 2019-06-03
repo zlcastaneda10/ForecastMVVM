@@ -1,4 +1,4 @@
-package com.zaphier.forecastmvvm.data
+package com.zaphier.forecastmvvm.data.network
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.zaphier.forecastmvvm.data.network.response.CurrentWeatherResponse
@@ -21,7 +21,9 @@ interface ApixuWeatherApiService {
     ): Deferred <CurrentWeatherResponse>
 
     companion object {
-        operator fun invoke(): ApixuWeatherApiService{
+        operator fun invoke(
+            conectivityInterceptor: ConectivityInterceptor
+        ): ApixuWeatherApiService {
             val requestInterceptor = Interceptor { chain ->
                 val url = chain.request()
                     .url()
@@ -36,6 +38,7 @@ interface ApixuWeatherApiService {
             }
             val okHttpClient = OkHttpClient.Builder()
                 .addInterceptor(requestInterceptor)
+                .addInterceptor(conectivityInterceptor)
                 .build()
             return Retrofit.Builder()
                 .client(okHttpClient)
