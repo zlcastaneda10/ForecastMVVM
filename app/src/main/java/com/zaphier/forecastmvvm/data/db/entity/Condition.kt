@@ -1,4 +1,4 @@
-package com.zaphier.forecastmvvm.data.response
+package com.zaphier.forecastmvvm.data.db.entity
 
 
 data class Condition(

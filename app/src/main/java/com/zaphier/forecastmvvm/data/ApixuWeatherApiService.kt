@@ -1,9 +1,7 @@
 package com.zaphier.forecastmvvm.data
 
-import android.telephony.cdma.CdmaCellLocation
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.zaphier.forecastmvvm.data.response.CurrentWeatherEntry
-import com.zaphier.forecastmvvm.data.response.CurrentWeatherResponse
+import com.zaphier.forecastmvvm.data.network.response.CurrentWeatherResponse
 import kotlinx.coroutines.Deferred
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
