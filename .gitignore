@@ -94,3 +94,10 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+.idea/codeStyles/Project.xml
+.idea/.name
+.idea/codeStyles/codeStyleConfig.xml
+.idea/.name
+.idea/gradle.xml
+.idea/misc.xml
+.idea/vcs.xml
